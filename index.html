@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Bể Xanh 16-bit — Game setup bể thủy sinh</title>
+  <meta name="description" content="Game pixel art 16-bit quản lý bể thủy sinh: mua thiết bị, chạy chu trình nitơ, thả cá và giữ nước ổn định. Chơi miễn phí trên trình duyệt." />
+  <meta name="theme-color" content="#0b0f14" />
+  <link rel="canonical" href="https://khahdihdz.github.io/bethuysinh/" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bể Xanh 16-bit — Game setup bể thủy sinh" />
+  <meta property="og:description" content="Tự tay setup bể thủy sinh: lọc, sưởi, vi sinh, chu trình nitơ và những chú cá pixel." />
+  <meta property="og:url" content="https://khahdihdz.github.io/bethuysinh/" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta name="twitter:card" content="summary" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Bể Xanh 16-bit",
+    "url": "https://khahdihdz.github.io/bethuysinh/",
+    "description": "Game mô phỏng quản lý bể thủy sinh theo phong cách pixel art 16-bit: thiết bị, chu trình nitơ, cá và sự kiện.",
+    "genre": ["Simulation", "Management"],
+    "gamePlatform": "Web browser",
+    "applicationCategory": "Game",
+    "inLanguage": "vi",
+    "playMode": "SinglePlayer",
+    "author": { "@type": "Person", "name": "khahdihdz" }
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">BỂ XANH</span>
+        <span class="brand-sub">16-BIT AQUARIUM</span>
+      </div>
+      <div class="top-actions">
+        <button type="button" id="sound-btn" class="btn btn-small" data-act="sound" aria-pressed="false">Âm thanh: TẮT</button>
+        <button type="button" class="btn btn-small" data-act="help">Hướng dẫn</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="stage-wrap" aria-label="Khu bể cá">
+        <div class="stage">
+          <canvas id="game" width="256" height="224" aria-label="Bể thủy sinh pixel art"></canvas>
+        </div>
+        <p class="legend">Phím tắt: <b>1/2/3</b> đổi tốc độ · <b>Space</b> tạm dừng · Tiến trình tự lưu.</p>
+      </section>
+
+      <section class="side">
+        <nav id="tabs" class="tabs" role="tablist" aria-label="Khu vực game"></nav>
+        <div id="panel" class="panel" role="tabpanel" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <div id="toasts" class="toasts" aria-live="polite" aria-atomic="false"></div>
+
+    <footer class="footer">
+      <span>Game mô phỏng giáo dục — không thay thế hướng dẫn nuôi cá thật.</span>
+      <span>Pixel art 256×224 · không tài nguyên ngoài.</span>
+    </footer>
+  </div>
+
+  <div id="dialog-layer" class="dialog-layer" hidden>
+    <div class="dialog-box" role="dialog" aria-modal="true" aria-labelledby="dialog-speaker">
+      <div class="dialog-speaker" id="dialog-speaker">Chủ tiệm</div>
+      <p class="dialog-text" id="dialog-text"></p>
+      <div class="dialog-options" id="dialog-options"></div>
+      <button type="button" class="dialog-skip" id="dialog-skip">Bỏ qua ▸</button>
+    </div>
+  </div>
+
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
